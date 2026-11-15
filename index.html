@@ -1,11 +1,107 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Habitly</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habitly - CodGen</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A;
+  --teal:#14B8A6;
+  --bg:#F8FAFC;
+  --white:#ffffff;
+  --text:#334155;
+}
+*{margin:0; padding:0; box-sizing:border-box;}
+body{font-family:'Inter', system-ui, sans-serif; background:var(--bg); color:var(--text);}
+
+header{
+  background:var(--navy); color:white;
+  padding:24px; display:flex; justify-content:space-between; align-items:center;
+}
+header h1{font-size:24px;}
+header p{opacity:0.8; font-size:14px;}
+
+main{max-width:1280px; margin:0 auto; padding:24px;}
+
+/* Summary Row */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:16px; margin-bottom:24px;
+}
+.stat-card{
+  background:var(--white); padding:24px; border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06); text-align:center;
+}
+.stat-card h3{font-size:28px; color:var(--navy);}
+.stat-card p{color:#64748b; margin-top:8px;}
+
+/* Habit Cards */
+.habits{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  gap:16px;
+}
+.card{
+  background:var(--white); padding:24px; border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.06);
+}
+.card:hover{transform:translateY(-4px); box-shadow:0 8px 20px rgba(0,0,0,0.1);}
+.card .emoji{font-size:32px;}
+.card h2{font-size:18px; color:var(--navy); margin:16px 0 8px;}
+.card .streak{color:var(--teal); font-weight:600; font-size:14px;}
+.card button{
+  margin-top:16px; width:100%; padding:12px;
+  background:var(--teal); color:white; border:none;
+  border-radius:8px; font-weight:600; cursor:pointer;
+}
+.card button:hover{background:#0d9488;}
+
+footer{
+  text-align:center; padding:24px; color:#64748b; margin-top:24px;
+}
+    /* Responsive - 768px Tablet */
+@media (max-width:768px){
+  .stats, .habits{grid-template-columns:repeat(2, 1fr);}
+}
+
+/* Responsive */
+@media (max-width:360px){
+  header{flex-direction:column; gap:8px; text-align:center;}
+  main{padding:16px;}
+}
+</style>
 </head>
 <body>
-    <h1>Habitly</h1>
-    <h2>Thanuja Munulapati</h2>
+
+<header>
+  <h1>🌱 Habitly</h1>
+  <p>Friday, 6 November</p>
+</header>
+
+<main>
+  <section class="stats">
+    <div class="stat-card"><h3>Done today 3/5</h3><p>Keep going!</p></div>
+    <div class="stat-card"><h3>Best streak 12 days</h3><p>Amazing consistency</p></div>
+    <div class="stat-card"><h3>This week 78%</h3><p>Almost there</p></div>
+  </section>
+
+  <section class="habits">
+    <article class="card"><div class="emoji">🏃</div><h2>Morning Walk</h2><p class="streak">🔥 7 days streak</p><button>Complete</button></article>
+    <article class="card"><div class="emoji">💧</div><h2>Drink Water</h2><p class="streak">🔥 12 days streak</p><button>Complete</button></article>
+    <article class="card"><div class="emoji">📖</div><h2>Read 20 mins</h2><p class="streak">🔥 5 days streak</p><button>Complete</button></article>
+    <article class="card"><div class="emoji">🧘</div><h2>Meditation</h2><p class="streak">🔥 9 days streak</p><button>Complete</button></article>
+    <article class="card"><div class="emoji">💻</div><h2>Code Practice</h2><p class="streak">🔥 4 days streak</p><button>Complete</button></article>
+  </section>
+</main>
+
+<footer>
+  <p>Built with the CodGen Frontend Internship | codgen.in</p>
+</footer>
+
 </body>
 </html>
+
+
